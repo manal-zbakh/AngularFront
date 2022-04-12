@@ -1,0 +1,75 @@
+<div>
+  <div class="header-dark">
+    <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+      <div class="container">
+        <a class="navbar-brand">Smart Contract</a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navcol-1"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="nav navbar-nav">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" routerLink="" routerLinkActive="active"
+                >Acceuil</a
+              >
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#about">Services</a>
+            </li>
+            <li class="nav-item" role="presentation" *ngIf="!isloged()">
+              <a class="nav-link" routerLink="gestion" routerLinkActive="active"
+                >Gestion</a
+              >
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" routerLink="contact" routerLinkActive="active"
+                >Contracts</a
+              >
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#lieu">Lieu</a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#contacter">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline mr-auto" target="_self">
+            <div class="form-group">
+              <input
+                class="form-control search-field"
+                type="search"
+                name="search"
+                id="search-field"
+              />
+            </div>
+          </form>
+          <a
+            *ngIf="isloged()"
+            class="btn btn-light action-button"
+            role="button"
+            href="#"
+            routerLink="login"
+            routerLinkActive="active"
+            >Log In</a
+          >
+
+          <a
+            *ngIf="!isloged()"
+            (click)="logout()"
+            class="btn btn-light action-button"
+            role="button"
+            href="#"
+            >Log out</a
+          >
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

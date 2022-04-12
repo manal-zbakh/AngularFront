@@ -1,0 +1,51 @@
+<div class="section">
+  <div class="container">
+    <p style="text-align: center"></p>
+    <div class="row full-height justify-content-center">
+      <div class="col-12 text-center align-self-center py-5">
+        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+          <!-- <h6 class="mb-0 pb-3"><span>Log In </span></h6> -->
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper">
+              <!-- <form class="card-front" #myform="ngForm"> -->
+              <form class="card-front" #myform="ngForm">
+                <div class="center-wrap">
+                  <div class="section text-center">
+                    <h3 class="mb-4 pb-3" style="color: #e7d9ea">Log In</h3>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        ngModel
+                        name="username"
+                        class="form-style"
+                        placeholder="Votre nom"
+                        id="logemail"
+                        autocomplete="off"
+                      />
+                      <i class="input-icon uil uil-user"></i>
+                    </div>
+                    <div class="form-group mt-2">
+                      <input
+                        type="password"
+                        ngModel
+                        name="password"
+                        class="form-style"
+                        placeholder="Votre mot de passe"
+                        id="logpass"
+                        autocomplete="off"
+                      />
+                      <i class="input-icon uil uil-lock-alt"></i>
+                    </div>
+                    <button class="btn mt-4" (click)="authenticate(myform)">
+                      submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

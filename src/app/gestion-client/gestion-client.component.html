@@ -1,0 +1,31 @@
+<div class="main-block">
+  <div class="left-part">
+    <i class="fas fa-user"></i>
+    <h1>l'espace client</h1>
+    <p>
+      <button (click)="onContinue1()">Consulter la liste des clients</button>
+    </p>
+  </div>
+  <form #myform="ngForm">
+    <div class="title">
+      <i class="fas fa-pencil-alt"></i>
+      <h2>L'inscription ici</h2>
+    </div>
+    <div class="info">
+      <input
+        class="fname"
+        required
+        minlength="6"
+        ngModel
+        type="text"
+        name="nom"
+        placeholder="Nom"
+      />
+
+      <input type="text" ngModel name="prenom" placeholder="Prénom" />
+      <input type="text" ngModel name="email" placeholder="Email" />
+      <input type="text" ngModel name="codeClient" placeholder="Code Client" />
+    </div>
+    <button (click)="test(myform)">Enregister</button>
+  </form>
+</div>

@@ -1,0 +1,64 @@
+<div class="main-block">
+  <div class="left-part">
+    <i class="fas fa-home"></i>
+    <h1>L'espace d'immobilier</h1>
+    <p><button (click)="onContinue1()">Annuler la modification</button></p>
+  </div>
+  <form #myform="ngForm">
+    <div class="title">
+      <i class="fas fa-pencil-alt"></i>
+      <h2>Modification d'immobilier</h2>
+    </div>
+    <div class="info">
+      <input
+        class="fname"
+        [(ngModel)]="immobilier.address"
+        ngModel
+        type="text"
+        name="address"
+        placeholder="Address"
+      />
+      <input
+        type="text"
+        [(ngModel)]="immobilier.codeImmobilier"
+        name="codeImmobilier"
+        placeholder="Code Immobilier"
+      />
+      <input
+        type="text"
+        [(ngModel)]="immobilier.type"
+        name="type"
+        placeholder="Type d'immobilier"
+      />
+      <input
+        type="text"
+        [(ngModel)]="immobilier.description"
+        name="description"
+        placeholder="Description d'immobilier"
+      />
+      <input
+        type="text"
+        [(ngModel)]="immobilier.surface"
+        name="surface"
+        placeholder="Surface en m2"
+      />
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            type="text"
+            name="client code"
+            #code
+            placeholder="Code client"
+          />
+        </div>
+        <div class="col-md-6">
+          <button (click)="get(code.value)">Vérifiez le code</button>
+        </div>
+      </div>
+
+      <input type="text" disabled #client name="client" placeholder="Client" />
+    </div>
+
+    <button (click)="addclient(myform)">Confirmer la modification</button>
+  </form>
+</div>

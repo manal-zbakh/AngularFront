@@ -1,0 +1,64 @@
+<div class="main-block">
+  <div class="left-part">
+    <i class="fas fa-home"></i>
+    <h1>l'espace immobilier</h1>
+    <p>
+      <button (click)="onContinue1()">
+        Consulter la liste des immobiliers
+      </button>
+    </p>
+  </div>
+  <form #myform="ngForm">
+    <div class="title">
+      <i class="fas fa-pencil-alt"></i>
+      <h2>L'inscription ici</h2>
+    </div>
+    <div class="info">
+      <input
+        class="fname"
+        ngModel
+        type="text"
+        name="address"
+        placeholder="Address"
+      />
+      <input
+        type="text"
+        ngModel
+        name="codeImmobilier"
+        placeholder="Code Immobilier"
+      />
+      <input type="text" ngModel name="type" placeholder="Type d'immobilier" />
+      <input
+        type="text"
+        ngModel
+        name="description"
+        placeholder="Description d'immobilier"
+      />
+      <input type="text" ngModel name="surface" placeholder="Surface en m2" />
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            type="text"
+            name="client code"
+            #code
+            placeholder="Code client"
+          />
+        </div>
+        <div class="col-md-6">
+          <button (click)="getClient(code.value)">Vérifiez le code</button>
+        </div>
+      </div>
+
+      <input
+        type="text"
+        [(ngModel)]="nom"
+        disabled
+        #client
+        name="client"
+        placeholder="Client"
+      />
+    </div>
+
+    <button (click)="addclient(myform)">Enregister</button>
+  </form>
+</div>

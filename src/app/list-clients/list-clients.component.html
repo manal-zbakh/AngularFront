@@ -1,0 +1,54 @@
+<div class="container mm">
+  <div class="row">
+    <!-- <div class="col col-xs-6"> -->
+    <div class="col-sm-8">
+      <!-- <h5 class="panel-title">Détails des clients</h5> -->
+      <h2 style="color: #170055">Détails <b>des clients</b></h2>
+    </div>
+    <!-- <div class="col col-xs-6 "> -->
+    <div class="col-sm-4">
+      <!-- class="btn btn-sm  btn-create" -->
+      <button
+        type="button"
+        class="btn btn-info add-new"
+        (click)="onContinue1()"
+      >
+        <i class="fa fa-plus"></i> Ajouter un nouveau client
+      </button>
+    </div>
+  </div>
+
+  <table class="rwd-table">
+    <tbody>
+      <tr>
+        <!-- <th>Action</th> -->
+        <th>Action</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Code du Client</th>
+      </tr>
+      <tr *ngFor="let client of clients">
+        <td data-th="Action">
+          <a class="btn btn-default" (click)="edit(client.id)"
+            ><i class="fas fa-pencil-alt"></i></a>
+          <a class="btn btn-danger" (click)="delete(client.id)"
+            ><em class="fa fa-trash"></em
+          ></a>
+        </td>
+        <td data-th="Prénom">
+          {{ client.prenom }}
+        </td>
+        <td data-th="Nom">
+          {{ client.nom }}
+        </td>
+        <td data-th="Email">
+          {{ client.email }}
+        </td>
+        <td data-th="Code du Client">
+          {{ client.codeClient }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,51 @@
+<div class="main-block">
+  <div class="left-part">
+    <i class="fas fa-file-signature"></i>
+    <h1>l'espace contract</h1>
+    <p>
+      <button (click)="onContinue1()">Consulter la liste des contracts</button>
+    </p>
+  </div>
+  <form #myform="ngForm">
+    <div class="title">
+      <i class="fas fa-pencil-alt"></i>
+      <h2>L'inscription ici</h2>
+    </div>
+    <div class="info">
+      <input type="text" ngModel name="cout" placeholder="Coût" />
+      <div class="row">
+        <div class="col-md-6">
+          <input class="fname" type="text" #imo placeholder="Id_mmobilier" />
+        </div>
+        <div class="col-md-6">
+          <button (click)="checkim(imo.value)">Vérifiez le code</button>
+        </div>
+      </div>
+      <select *ngIf="owner">
+        <option *ngFor="let item of owner.accounts">
+          {{ item.address }}
+        </option>
+      </select>
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            class="fname"
+            type="text"
+            name="name"
+            #cl
+            placeholder="Vendeur"
+          />
+        </div>
+        <div class="col-md-6">
+          <button (click)="checkcl(cl.value)">Vérifiez le code</button>
+        </div>
+      </div>
+      <select *ngIf="bayer">
+        <option *ngFor="let item of bayer.accounts">
+          {{ item.address }}
+        </option>
+      </select>
+    </div>
+    <button (click)="get(myform)">Enregister</button>
+  </form>
+</div>

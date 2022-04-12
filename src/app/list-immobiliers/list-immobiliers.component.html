@@ -1,0 +1,67 @@
+<div class="container mm">
+  <div class="row">
+    <!-- <div class="col col-xs-6"> -->
+    <div class="col-sm-8">
+      <!-- <h5 class="panel-title">Détails des clients</h5> -->
+      <h2 style="color: #170055">Détails <b>des immobiliers</b></h2>
+    </div>
+    <!-- <div class="col col-xs-6 "> -->
+    <div class="col-sm-4">
+      <!-- class="btn btn-sm  btn-create" -->
+      <button
+        type="button"
+        class="btn btn-info add-new"
+        (click)="onContinue1()"
+      >
+        <i class="fa fa-plus"></i> Ajouter un nouveau immobilier
+      </button>
+    </div>
+  </div>
+
+  <table class="rwd-table">
+    <tbody>
+      <tr>
+        <!-- <th>Action</th> -->
+        <th>Action</th>
+        <th>Adress</th>
+        <th>Code Immobilier</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Surface</th>
+        <th>Client code</th>
+        <th>Client</th>
+      </tr>
+      <tr *ngFor="let immobilier of immobiliers">
+        <td data-th="Action">
+          <a class="btn btn-default" (click)="edit(immobilier.id)"
+            ><em class="fa fa-pencil"></em
+          ></a>
+          <a class="btn btn-danger" (click)="delete(immobilier.id)"
+            ><em class="fa fa-trash"></em
+          ></a>
+        </td>
+        <td data-th="Adress">
+          {{ immobilier.address }}
+        </td>
+        <td data-th="Code Immobilier">
+          {{ immobilier.codeImmobilier }}
+        </td>
+        <td data-th="Type">
+          {{ immobilier.type }}
+        </td>
+        <td data-th="Description">
+          {{ immobilier.description }}
+        </td>
+        <td data-th="Surface">
+          {{ immobilier.surface }}
+        </td>
+        <td data-th="Client code">
+          {{ immobilier.client.codeClient }}
+        </td>
+        <td data-th="Client">
+          {{ immobilier.client.nom + " " + immobilier.client.prenom }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

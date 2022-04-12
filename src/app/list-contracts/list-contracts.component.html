@@ -1,0 +1,32 @@
+<div>
+  <form action="" class="search-bar">
+    <input
+      type="search"
+      name="search"
+      [(ngModel)]="searchText"
+      #val
+      (input)="search(val.value)"
+      required
+    />
+    <button class="search-btn" type="submit">
+      <span>Search</span>
+    </button>
+  </form>
+
+  <div class="pricing-box-container">
+    <div class="pricing-box text-center" *ngFor="let contrat of res">
+      <h5>Contract</h5>
+      <p class="price"><sup>$</sup>{{ contrat.cout }}<sub>/mo</sub></p>
+      <ul class="features-list">
+        <li><strong>Id :</strong> {{ contrat.immobilier.id }}</li>
+        <li><strong>Vendeur :</strong> {{ contrat.owner.nom }}</li>
+        <li><strong>Acheteur :</strong> {{ contrat.bayer.nom }}</li>
+        <li>
+          <strong>Date :</strong>
+          {{ contrat.date | date: "dd/MM/yyyy hh:mm a" }}
+        </li>
+      </ul>
+      <!-- <button class="btn-primary">Add contract</button> -->
+    </div>
+  </div>
+</div>
